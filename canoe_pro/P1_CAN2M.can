@@ -1,0 +1,35 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  msTimer timer1s;
+  msTimer timer500ms;
+  message CAN2M_Pres_Msg C2M_PresMSG;
+  message CAN2M_Act_Msg C2M_ActMSG;
+  message CAN2M_ADC_Msg C2M_ADCMSG;
+}
+
+on start{
+  setTimer(timer1s,1000);
+  setTimer(timer500ms,500);
+  C2M_ActMSG.CAN2M_Act_Sig = 0;
+}
+
+on timer timer500ms{
+  setTimer(timer500ms,500);
+  //output(C2M_PresMSG);
+}
+
+on timer timer1s{
+  setTimer(timer1s,1000);
+  //output(C2M_ADCMSG);
+}
+
+on key '2'{
+ C2M_ActMSG.CAN2M_Act_Sig = ~C2M_ActMSG.CAN2M_Act_Sig;
+  output(C2M_ActMSG);
+}

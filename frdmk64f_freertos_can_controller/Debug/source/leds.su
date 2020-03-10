@@ -1,0 +1,8 @@
+fsl_clock.h:666:20:CLOCK_EnableClock	24	static
+fsl_gpio.h:155:20:GPIO_PinWrite	24	static
+fsl_port.h:243:20:PORT_SetPinConfig	32	static
+leds.c:10:6:init_leds	16	static
+leds.c:30:6:green_led	8	static
+leds.c:37:6:red_led	8	static
+leds.c:44:6:blue_led	8	static
+leds.c:51:6:turnLedsOff	8	static

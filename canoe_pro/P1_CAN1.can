@@ -1,0 +1,45 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  msTimer timer1s;
+  msTimer timer500ms;
+  message CAN1_Pres_Msg C1_PresMSG;
+  message CAN1_Act_Msg C1_ActMSG;
+  message CAN1_ADC_Msg C1_ADCMSG;
+}
+
+on start{
+  setTimer(timer1s,1000);
+  setTimer(timer500ms,500);
+  C1_ActMSG.CAN1_Act_Sig = 0;
+}
+
+on timer timer500ms{
+  setTimer(timer500ms,500);
+  //output(C1_PresMSG);
+}
+
+on timer timer1s{
+  //setTimer(timer1s,1000);
+  C1_PresMSG.CAN1_Pres_Sig = 0;
+  //output(C1_ADCMSG);
+}
+
+on key '1'{
+ C1_ActMSG.CAN1_Act_Sig = C1_ActMSG.CAN1_Act_Sig;
+ output(C1_ActMSG); 
+}
+on key '0'{
+ C1_ActMSG.CAN1_Act_Sig = !C1_ActMSG.CAN1_Act_Sig;
+ output(C1_ActMSG); 
+}
+on message CAN1_Pres_Msg{
+ C1_PresMSG.CAN1_Pres_Sig = 1;
+  setTimer(timer1s,1000);
+   //!= C1_ActMSG.CAN1_Act_Sig
+}

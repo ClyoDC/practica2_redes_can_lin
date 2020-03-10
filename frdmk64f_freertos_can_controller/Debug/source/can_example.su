@@ -1,0 +1,13 @@
+core_cm4.h:1677:22:__NVIC_EnableIRQ	16	static
+fsl_common.h:414:28:EnableIRQ	16	static
+fsl_flexcan.h:601:24:FLEXCAN_GetStatusFlags	16	static
+fsl_adc16.h:386:20:ADC16_EnableHardwareTrigger	16	static
+fsl_adc16.h:504:24:ADC16_GetChannelConversionValue	16	static
+can_example.c:107:13:flexcan_callback	24	static
+can_example.c:131:6:CAN_Init	32	static
+can_example.c:177:6:ADC0_IRQHandler	8	static
+can_example.c:190:9:read_adc	24	static
+can_example.c:199:5:main	16	static
+can_example.c:235:13:task_presence	32	static
+can_example.c:264:13:task_adc	32	static
+can_example.c:296:13:task_rx	88	static
